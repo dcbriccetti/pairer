@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {Button, Stack, TextField, Typography} from '@mui/material';
+import {Box, Button, Link, Stack, TextField, Typography} from '@mui/material';
 
 function App() {
     const [names, setNames] = useState(""); // Names from the TextField
@@ -66,6 +66,15 @@ function App() {
         <div className="App">
             <Stack spacing={2} sx={{margin: 'auto', maxWidth: 600}}>
                 <Typography variant='h3' sx={{textAlign: 'center'}}>Names Pairer</Typography>
+                <Box sx={{fontSize: '0.7rem'}}> {/* Adjust the font size using the sx prop */}
+                    <Typography variant="body2">
+                        By <Link href="https://davebsoft.com" underline="hover">Dave Briccetti</Link>
+                        <Link href="https://github.com/dcbriccetti/pairer" underline="hover" sx={{ml: 2}}>
+                            Source code
+                        </Link>
+                    </Typography>
+                </Box>
+                <Typography>Type or paste in a list of names, one per line. Adjust the pair separator if needed, then push Pair, below.</Typography>
                 <TextField
                     label="Names"
                     variant="outlined"
